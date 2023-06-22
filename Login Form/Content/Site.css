@@ -1,0 +1,17 @@
+﻿body {
+margin :5%
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+   margin:5%
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+

@@ -1,0 +1,67 @@
+﻿@model Login_Form.Models.LoginModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+@using (Html.BeginForm("Submit" , "Login")) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4 style="padding-bottom:20px;">Login</h4>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+  
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input value="Login" type="submit" class="btn btn-default" />
+
+            </div>
+        </div>
+   
+</div>
+}
+
+<style>
+    .col-md-10 input {
+        width: 400px
+    }
+
+    .btn {
+        background-color: #27374D;
+        color:white;
+        margin:20px 0;
+    }
+
+        .btn:hover {
+            border: 2px solid #27374D;
+            font-weight:600;
+        }
+</style>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
